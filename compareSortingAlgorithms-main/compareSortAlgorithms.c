@@ -26,7 +26,7 @@ size_t Size(void *ptr)
 {
 	return ((size_t *)ptr)[-1];
 }
-
+//heap sort function
 void heapify(int arr[], int n, int i)
 {
 	int largest = i;
@@ -55,6 +55,7 @@ void heapify(int arr[], int n, int i)
 
 // implements heap sort
 // extraMemoryAllocated counts bytes of memory allocated
+// heap sort main
 void heapSort(int arr[], int n)
 {
 
@@ -187,10 +188,8 @@ void selectionSort(int *pData, int n)
 {
 	int i, j, min_idx, temp;
 
-	// one by one move boundary of unsorted array
 	for (i = 0; i < n - 1; i++)
 	{
-		// find the mininum element in unsorted array
 		min_idx = i;
 		for (j = i + 1; j < n; j++)
 		{
@@ -200,7 +199,6 @@ void selectionSort(int *pData, int n)
 			}
 		}
 
-		// swap the min element with the first element
 		temp = pData[i];
 		pData[i] = pData[min_idx];
 		pData[min_idx] = temp;
